@@ -1,0 +1,59 @@
+ul li a {
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 100px;
+  height: 34px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.address-text-regular {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.navigation-text-regular,
+ul li a {
+  color: #000000;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.social-media-text-regular {
+  color: #000000;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.copyright-text-regular {
+  color: #000000;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+footer {
+  margin-top: 15vh;
+  box-sizing: border-box;
+  padding-bottom: 20vh;
+}
+
+@media (max-width: 576px) {
+  .social-media-list {
+    gap: 1rem;
+  }
+}

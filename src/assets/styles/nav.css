@@ -1,0 +1,14 @@
+.offcanvas-backdrop {
+  height: 100%;
+}
+.navbar-toggler {
+  border: none;
+  color: #222222;
+}
+
+.brand-logo {
+  width: 100px;
+  height: 34px;
+  overflow: hidden;
+  object-fit: cover;
+}
