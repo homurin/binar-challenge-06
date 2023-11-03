@@ -1,17 +1,9 @@
 import CarsCard from "./CarsCard";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { CarContext } from "@/store/cars-filter";
 
 function CarList() {
-  const { carsData, carsFilter, isLoading } = useContext(CarContext);
-  console.log(isLoading);
-  const cars = carsData.filter((car) => {
-    return (
-      car.capacity >= carsFilter.capacity &&
-      car.availableAt <=
-        new Date(carsFilter.availableAt || Date.now()).toISOString()
-    );
-  });
+  const { filteredCars: cars, isLoading } = useContext(CarContext);
 
   return (
     <section className="cars">
@@ -20,7 +12,7 @@ function CarList() {
           <div className="col-lg-11 ">
             <div className="row" id="cars-container">
               {isLoading && <h4>Waiting for cars ...</h4>}
-              {cars.length === 0 && <p>Car is empty</p>}
+              {cars.length === 0 && !isLoading && <p>Car is empty</p>}
               {cars.map((car) => {
                 return <CarsCard key={car.id} {...car} />;
               })}

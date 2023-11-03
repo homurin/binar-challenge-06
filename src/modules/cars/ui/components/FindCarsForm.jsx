@@ -13,7 +13,7 @@ function FindCarsForm() {
               <select
                 className="form-select"
                 aria-label="Default select example"
-                id="tipeDriver"
+                id="driverType"
                 defaultValue="default"
                 onChange={(e) =>
                   onChangeEventHandler("driverType", e.target.value)
@@ -46,7 +46,7 @@ function FindCarsForm() {
                 id="waktuJemput"
                 onChange={(e) => onChangeEventHandler("time", e.target.value)}
               >
-                <option value="false" defaultValue="default">
+                <option value="false">
                   Pilih Waktu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 </option>
                 <option value="08:00">08.00 WIB</option>

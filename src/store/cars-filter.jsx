@@ -3,20 +3,22 @@ import CarsApi from "@/services/api/cars";
 
 export const CarContext = createContext({
   isLoading: false,
-  carsData: [],
   carsFilter: {},
+  filteredCars: [],
   onChangeEventHandler: () => {},
   onSubmitHandler: () => {},
 });
 
 export default function CarsContextProvider({ children }) {
   const [cars, setCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState(cars);
   const [isLoading, setIsLoading] = useState(false);
   async function getCars() {
     try {
       setIsLoading(true);
       const cars = await CarsApi();
       setCars(cars);
+      setFilteredCars(cars);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -28,7 +30,7 @@ export default function CarsContextProvider({ children }) {
   }, []);
 
   const [carsFilter, setCarsFilter] = useState({
-    driverType: "",
+    driverType: "default",
     availableAt: "",
     time: "",
     capacity: getGreaterCapacity(),
@@ -45,6 +47,25 @@ export default function CarsContextProvider({ children }) {
 
   function onSubmitHandler(e) {
     e.preventDefault();
+    const filteredCars = cars
+      .filter((car) => {
+        if (carsFilter.driverType === "default") {
+          return car;
+        }
+        return car.available.toString() === carsFilter.driverType;
+      })
+      .filter((car) => {
+        const getDate =
+          carsFilter.availableAt === ""
+            ? `${new Date().getDate()}-${new Date().getMonth()}-${new Date().getFullYear()}`
+            : carsFilter.availableAt;
+        const getTime = carsFilter.time === "false" ? "" : carsFilter.time;
+        const date = new Date(`${getDate} ${getTime}`).toISOString();
+
+        return car.capacity >= carsFilter.capacity && car.availableAt <= date;
+      });
+    console.log(filteredCars);
+    setFilteredCars(filteredCars);
   }
 
   function getGreaterCapacity() {
@@ -55,8 +76,8 @@ export default function CarsContextProvider({ children }) {
 
   const ctxValue = {
     isLoading,
-    carsData: cars,
     carsFilter,
+    filteredCars,
     onChangeEventHandler,
     onSubmitHandler,
   };

@@ -12,7 +12,9 @@ function CarsCard({
     <div className="col-lg-4 my-2">
       <div className="card px-2 py-4">
         <img
-          src={`/${image}`}
+          src={`https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/public/images/${
+            image.split("/")[2]
+          }`}
           alt={manufacture}
           className="card-img-top mt-4 text-center"
         />
