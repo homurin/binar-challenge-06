@@ -1,10 +1,10 @@
-import CarsCard from "./CarsCard";
 import { useContext } from "react";
-import { CarContext } from "@/store/cars-filter";
+import CarsCard from "./CarsCard";
+import { CarContext } from "@/store/cars-context";
 
 function CarList() {
   const { filteredCars: cars, isLoading } = useContext(CarContext);
-
+  console.log(cars);
   return (
     <section className="cars">
       <div className="container">

@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { CarContext } from "@/store/cars-filter";
+import { CarContext } from "@/store/cars-context";
 
 function FindCarsForm() {
   const { onChangeEventHandler, onSubmitHandler } = useContext(CarContext);
+
   return (
     <form onSubmit={(e) => onSubmitHandler(e)}>
       <div className="row">

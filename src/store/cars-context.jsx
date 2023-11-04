@@ -1,0 +1,67 @@
+import { useState, createContext, useEffect, useReducer } from "react";
+import CarsApi from "@/services/api/cars";
+import carsReducer from "./cars-reducer";
+
+export const CarContext = createContext({
+  isLoading: false,
+  filteredCars: [],
+  onChangeEventHandler: () => {},
+  onSubmitHandler: () => {},
+});
+
+export default function CarsContextProvider({ children }) {
+  const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [carsState, carsDispatch] = useReducer(carsReducer, {
+    filteredCars: cars,
+    carsFilter: {
+      driverType: "default",
+      availableAt: "",
+      time: "",
+      capacity: getGreaterCapacity(),
+    },
+  });
+
+  async function getCars() {
+    try {
+      setIsLoading(true);
+      const cars = await CarsApi();
+      setCars(cars);
+      carsDispatch({ type: "ON_RENDER", payload: { cars } });
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    getCars();
+  }, []);
+
+  function onChangeEventHandler(keyName, value) {
+    carsDispatch({ type: "ON_CHANGE", payload: { keyName, value } });
+  }
+
+  function onSubmitHandler(e) {
+    carsDispatch({
+      type: "ON_SUBMIT_FILTER",
+      payload: { e, cars, carsFilter: carsState.carsFilter },
+    });
+  }
+
+  function getGreaterCapacity() {
+    const capacity = cars.map((e) => e.capacity);
+    const greaterCapacity = Math.max(...capacity);
+    return greaterCapacity;
+  }
+  const ctxValue = {
+    isLoading,
+    filteredCars: carsState.filteredCars,
+    onChangeEventHandler,
+    onSubmitHandler,
+  };
+
+  console.log(ctxValue.filteredCars);
+  return <CarContext.Provider value={ctxValue}>{children}</CarContext.Provider>;
+}
