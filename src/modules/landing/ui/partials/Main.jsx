@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import HeroSection from "../blocks/HeroSection";
 import ServicesSection from "../blocks/ServicesSection";
 import WhyUs from "../blocks/WhyUs";
