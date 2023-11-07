@@ -6,7 +6,7 @@ import NavRegisterButton from "../components/NavRegisterButton";
 
 function Navbar() {
   return (
-    <NavbarBody imgSrc="src/assets/images/logo/logo.png" imgAlt="logo">
+    <NavbarBody imgSrc="/assets/images/logo/logo.png" imgAlt="logo">
       <NavList>
         <NavItem text="Our Services" href="#" />
         <NavItem text="Why Us" href="#" />

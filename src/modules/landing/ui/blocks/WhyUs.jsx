@@ -12,7 +12,7 @@ function WhyUs() {
           description="
           Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan
           terawat"
-          imgSrc="/src/assets/icons/why-us/icon_complete.svg"
+          imgSrc="/assets/icons/why-us/icon_complete.svg"
           alt="Complete Icon"
         />
         <WhyUsItem
@@ -20,7 +20,7 @@ function WhyUs() {
           description="
           Harga murah dan bersaing, bisa bandingkan harga kami dengan
           rental mobil lain"
-          imgSrc="/src/assets/icons/why-us/icon_price.svg"
+          imgSrc="/assets/icons/why-us/icon_price.svg"
           alt="Price Icon"
         />
         <WhyUsItem
@@ -28,7 +28,7 @@ function WhyUs() {
           description="
           Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga
           tersedia di akhir minggu"
-          imgSrc="/src/assets/icons/why-us/icon_24hrs.svg"
+          imgSrc="/assets/icons/why-us/icon_24hrs.svg"
           alt="Complete Icon"
         />
         <WhyUsItem
@@ -36,7 +36,7 @@ function WhyUs() {
           description="
           Sopir yang profesional, berpengalaman, jujur, ramah dan selalu
           tepat waktu"
-          imgSrc="/src/assets/icons/why-us/icon_professional.svg"
+          imgSrc="/assets/icons/why-us/icon_professional.svg"
           alt="Professional Icon"
         />
       </WhyUsList>

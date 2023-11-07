@@ -71,7 +71,7 @@ function FindCarsForm() {
                 />
                 <span className="input-group-text bg-white">
                   <img
-                    src="/src/assets/icons/search/fi_users.png"
+                    src="assets/icons/search/fi_users.png"
                     width="20px"
                     alt=""
                   />

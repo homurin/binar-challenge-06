@@ -11,7 +11,7 @@ function TestimonyCarousel({ children }) {
         >
           <span aria-hidden="true">
             <img
-              src="/src/assets/icons/carousel/fi_chevron-left.svg"
+              src="assets/icons/carousel/fi_chevron-left.svg"
               alt="left arrow"
             />
           </span>
@@ -25,7 +25,7 @@ function TestimonyCarousel({ children }) {
         >
           <span aria-hidden="true">
             <img
-              src="/src/assets/icons/carousel/fi_chevron-right.svg"
+              src="assets/icons/carousel/fi_chevron-right.svg"
               alt="right arrow"
             />
           </span>

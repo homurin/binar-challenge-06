@@ -18,7 +18,7 @@ function Testimony() {
           sed do eiusmod lorem ipsum dolor sit amet, consectetur
           adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod”"
-          imgSrc="/src/assets/images/testimony/client.png"
+          imgSrc="/assets/images/testimony/client.png"
           active={true}
         />
         <TestimonyCarouselItem
@@ -29,7 +29,7 @@ function Testimony() {
           sed do eiusmod lorem ipsum dolor sit amet, consectetur
           adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod”"
-          imgSrc="/src/assets/images/testimony/client.png"
+          imgSrc="/assets/images/testimony/client.png"
         />
         <TestimonyCarouselItem
           clientName="John Doe"
@@ -39,7 +39,7 @@ function Testimony() {
           sed do eiusmod lorem ipsum dolor sit amet, consectetur
           adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod”"
-          imgSrc="/src/assets/images/testimony/client.png"
+          imgSrc="/assets/images/testimony/client.png"
         />
       </TestimonyCarousel>
     </TestimonyBody>

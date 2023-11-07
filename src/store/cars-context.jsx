@@ -30,7 +30,7 @@ export default function CarsContextProvider({ children }) {
       setCars(cars);
       carsDispatch({ type: "ON_RENDER", payload: { cars } });
     } catch (err) {
-      console.log(err.message);
+      console.error(err.message);
     } finally {
       setIsLoading(false);
     }
@@ -62,6 +62,5 @@ export default function CarsContextProvider({ children }) {
     onSubmitHandler,
   };
 
-  console.log(ctxValue.filteredCars);
   return <CarContext.Provider value={ctxValue}>{children}</CarContext.Provider>;
 }

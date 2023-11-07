@@ -24,13 +24,13 @@ function carsReducer(state, action) {
           if (carsFilter.driverType === "default") {
             return car;
           }
-          return car.available.toString() === carsFilter.driverType;
+          return car.available === JSON.parse(carsFilter.driverType);
         })
         .filter((car) => {
           const getDate =
             carsFilter.availableAt === ""
-              ? `${new Date().getDate()}-${new Date().getMonth()}-${new Date().getFullYear()}`
-              : carsFilter.availableAt;
+              ? `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+              : carsFilter.availableAt.replace(/-/g, "/");
           const getTime = carsFilter.time === "false" ? "" : carsFilter.time;
           const date = new Date(`${getDate} ${getTime}`).toISOString();
 

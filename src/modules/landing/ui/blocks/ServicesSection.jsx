@@ -10,7 +10,7 @@ function ServicesSection() {
   return (
     <ServicesSectionBody>
       <ServiceImage
-        src="/src/assets/images/services/img_service.png"
+        src="assets/images/services/img_service.png"
         alt="Happy girl"
       />
       <ServiceBody>

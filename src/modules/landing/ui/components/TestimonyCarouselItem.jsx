@@ -19,7 +19,7 @@ function TestimonyCarouselItem({
           </div>
           <div className="col-lg-8 col-md-12 col-sm-12 text-lg-start">
             <div className="rate-container d-flex justify-content-lg-start justify-content-sm-center">
-              <img src="/src/assets/icons/testimony/Rate.svg" alt="" />
+              <img src="assets/icons/testimony/Rate.svg" alt="" />
             </div>
             <p className="carousel-text-regular">{clientQuotes}</p>
             <strong className="carousel-text-bold">

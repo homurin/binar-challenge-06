@@ -13,27 +13,27 @@ function Footer() {
       <FooterNavigation />
       <FooterSocialList>
         <FooterSocialItem
-          imgSrc="/src/assets/icons/social-media-icon/icon_facebook.svg"
+          imgSrc="/assets/icons/social-media-icon/icon_facebook.svg"
           href=""
         />
         <FooterSocialItem
-          imgSrc="/src/assets/icons/social-media-icon/icon_instagram.svg"
+          imgSrc="/assets/icons/social-media-icon/icon_instagram.svg"
           href=""
         />
         <FooterSocialItem
-          imgSrc="/src/assets/icons/social-media-icon/icon_twitter.svg"
+          imgSrc="/assets/icons/social-media-icon/icon_twitter.svg"
           href=""
         />
         <FooterSocialItem
-          imgSrc="/src/assets/icons/social-media-icon/icon_mail.svg"
+          imgSrc="/assets/icons/social-media-icon/icon_mail.svg"
           href=""
         />
         <FooterSocialItem
-          imgSrc="/src/assets/icons/social-media-icon/icon_twitch.svg"
+          imgSrc="/assets/icons/social-media-icon/icon_twitch.svg"
           href=""
         />
       </FooterSocialList>
-      <FooterCopyright imgSrc="/src/assets/images/logo/logo.png" />
+      <FooterCopyright imgSrc="/assets/images/logo/logo.png" />
     </FooterBody>
   );
 }
