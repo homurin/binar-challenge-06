@@ -4,6 +4,7 @@ import carsReducer from "./cars-reducer";
 
 export const CarContext = createContext({
   isLoading: false,
+  isError: false,
   filteredCars: [],
   onChangeEventHandler: () => {},
   onSubmitHandler: () => {},
@@ -12,6 +13,7 @@ export const CarContext = createContext({
 export default function CarsContextProvider({ children }) {
   const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const [carsState, carsDispatch] = useReducer(carsReducer, {
     filteredCars: cars,
@@ -25,11 +27,13 @@ export default function CarsContextProvider({ children }) {
 
   async function getCars() {
     try {
+      setIsError(false);
       setIsLoading(true);
       const cars = await CarsApi();
       setCars(cars);
       carsDispatch({ type: "ON_RENDER", payload: { cars } });
     } catch (err) {
+      setIsError(true);
       console.error(err.message);
     } finally {
       setIsLoading(false);
@@ -56,6 +60,7 @@ export default function CarsContextProvider({ children }) {
     return greaterCapacity;
   }
   const ctxValue = {
+    isError,
     isLoading,
     filteredCars: carsState.filteredCars,
     onChangeEventHandler,

@@ -3,7 +3,7 @@ import CarsCard from "./CarsCard";
 import { CarContext } from "@/store/cars-context";
 
 function CarList() {
-  const { filteredCars: cars, isLoading } = useContext(CarContext);
+  const { filteredCars: cars, isLoading, isError } = useContext(CarContext);
 
   return (
     <section className="cars">
@@ -11,8 +11,17 @@ function CarList() {
         <div className="row justify-content-center">
           <div className="col-lg-11 ">
             <div className="row" id="cars-container">
-              {isLoading && <h4>Waiting for cars ...</h4>}
-              {cars.length === 0 && !isLoading && <p>Car is empty</p>}
+              {isError && (
+                <h4 className="text-danger text-center">
+                  Failed to fetch data
+                </h4>
+              )}
+              {isLoading && (
+                <h4 className="text-center">Menunggu data mobil ...</h4>
+              )}
+              {!isError && cars.length === 0 && !isLoading && (
+                <p className="text-center">Maaf tidak ada mobil tersedia</p>
+              )}
               {cars.map((car) => {
                 return <CarsCard key={car.id} {...car} />;
               })}
