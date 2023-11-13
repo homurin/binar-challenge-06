@@ -29,11 +29,11 @@ function carsReducer(state, action) {
         .filter((car) => {
           const getDate =
             carsFilter.availableAt === ""
-              ? `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+              ? `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
               : carsFilter.availableAt.replace(/-/g, "/");
+
           const getTime = carsFilter.time === "false" ? "" : carsFilter.time;
           const date = new Date(`${getDate} ${getTime}`).toISOString();
-
           return car.capacity >= carsFilter.capacity && car.availableAt <= date;
         });
       return {
